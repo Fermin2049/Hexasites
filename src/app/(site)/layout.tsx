@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { siteMetadata } from "./seo.config";
+import seo from "./seo.config";
+import "./globals.css";
+import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = siteMetadata;
+export const metadata: Metadata = {
+  title: seo.title,
+  description: seo.description,
+  keywords: seo.keywords,
+  openGraph: seo.openGraph,
+  twitter: seo.twitter,
+  alternates: {
+    canonical: seo.canonical,
+  },
+};
 
 export default function SiteLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // TODO: wrap pages with shared layout (header, footer, providers).
   return <>{children}</>;
 }
