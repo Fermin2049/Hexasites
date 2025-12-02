@@ -1,6 +1,8 @@
 'use client';
 
 import FloatingLines from '@/components/animations/FloatingLines';
+import './hero.css';
+
 import React from 'react';
 
 export default function Hero() {
@@ -25,19 +27,18 @@ export default function Hero() {
 			</div>
 
 			{/* Content */}
-			<main className="relative max-w-4xl mx-auto z-20 px-6">
-				<h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-xl leading-tight">
+			<main className="hero-content relative max-w-4xl mx-auto z-20 px-6">
+				<h1 className="hero-title">
 					Strategic Digital Solutions for Growing Businesses
 				</h1>
 
-				<p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-					We design and build high-performance websites, mobile apps, and custom IT systems.
-					Helping Australian companies streamline operations and expand their digital presence.
+				<p className="hero-description">
+					We design and build high-performance websites, mobile apps, and custom
+					IT systems. Helping Australian companies streamline operations and
+					expand their digital presence.
 				</p>
 
-				<button className="mt-8 px-8 py-3 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-lg hover:bg-white/20 transition">
-					Get a Free Consultation
-				</button>
+				<button className="hero-button">Get a Free Consultation</button>
 			</main>
 		</section>
 	);
