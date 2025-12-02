@@ -40,7 +40,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <section
-      className="py-24 px-6 max-w-6xl mx-auto"
+      className="section-default max-w-6xl mx-auto"
       aria-labelledby="portfolio-title"
     >
       <h2

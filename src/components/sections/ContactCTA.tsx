@@ -1,7 +1,7 @@
 export default function ContactCTA() {
   return (
     <section
-      className="py-24 px-6 max-w-4xl mx-auto text-center"
+      className="section-default max-w-4xl mx-auto text-center"
       aria-labelledby="contact-cta-title"
     >
       <h2

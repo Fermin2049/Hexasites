@@ -10,7 +10,7 @@ const technologies = [
 export default function Technologies() {
   return (
     <section
-      className="py-24 px-6 max-w-6xl mx-auto"
+      className="section-default max-w-6xl mx-auto"
       aria-labelledby="technologies-title"
     >
       <h2
