@@ -28,30 +28,35 @@ const StarBorder = <T extends ElementType = "button">({
   const inlineStyle = ((rest as any)?.style as CSSProperties) || {};
 
   return (
-    <Component
-      className={`star-border-container ${className}`}
-      {...(rest as any)}
-      style={{
-        padding: `${thickness}px 0`,
-        ...inlineStyle,
-      }}
-    >
-      <div
-        className="border-gradient-bottom"
+    <div className="star-item-wrapper flex">
+      <Component
+        className={`star-border-container ${className}`}
+        {...(rest as any)}
         style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
-          animationDuration: speed,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: `${thickness}px 0`,
+          ...inlineStyle,
         }}
-      />
-      <div
-        className="border-gradient-top"
-        style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
-          animationDuration: speed,
-        }}
-      />
-      <div className="inner-content">{children}</div>
-    </Component>
+      >
+        <div
+          className="border-gradient-bottom"
+          style={{
+            background: `radial-gradient(circle, ${color}, transparent 10%)`,
+            animationDuration: speed,
+          }}
+        />
+        <div
+          className="border-gradient-top"
+          style={{
+            background: `radial-gradient(circle, ${color}, transparent 10%)`,
+            animationDuration: speed,
+          }}
+        />
+        <div className="inner-content">{children}</div>
+      </Component>
+    </div>
   );
 };
 
