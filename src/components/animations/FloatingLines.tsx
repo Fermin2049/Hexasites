@@ -318,7 +318,9 @@ export default function FloatingLines({
 		const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
 		camera.position.z = 1;
 
-		const renderer = new WebGLRenderer({ antialias: true, alpha: false });
+		const renderer = new WebGLRenderer({ antialias: true, alpha: true });
+		renderer.setClearColor(0x000000, 0);
+
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 		renderer.domElement.style.width = '100%';
 		renderer.domElement.style.height = '100%';
@@ -407,14 +409,17 @@ export default function FloatingLines({
 		const setSize = () => {
 			const el = containerRef.current;
 			if (!el) return;
-			const width = el.clientWidth || 1;
-			const height = el.clientHeight || 1;
+			const width = el.offsetWidth || 1;
+			const height = el.offsetHeight || 1;
 
-			renderer.setSize(width, height, false);
+			const canvas = renderer.domElement;
+			renderer.setSize(width, height);
 
-			const canvasWidth = renderer.domElement.width;
-			const canvasHeight = renderer.domElement.height;
-			uniforms.iResolution.value.set(canvasWidth, canvasHeight, 1);
+			uniforms.iResolution.value.set(
+				renderer.domElement.clientWidth,
+				renderer.domElement.clientHeight,
+				1
+			);
 		};
 
 		setSize();
@@ -423,6 +428,19 @@ export default function FloatingLines({
 			typeof ResizeObserver !== 'undefined'
 				? new ResizeObserver(setSize)
 				: null;
+
+		const handleWindowResize = () => {
+			const el = containerRef.current;
+			if (!el) return;
+			const w = el.offsetWidth || 1;
+			const h = el.offsetHeight || 1;
+
+			renderer.setSize(w, h);
+			camera.aspect = w / h;
+			camera.updateProjectionMatrix();
+		};
+
+		window.addEventListener('resize', handleWindowResize);
 
 		if (ro && containerRef.current) {
 			ro.observe(containerRef.current);
@@ -490,6 +508,7 @@ export default function FloatingLines({
 			if (ro && containerRef.current) {
 				ro.disconnect();
 			}
+			window.removeEventListener('resize', handleWindowResize);
 
 			if (interactive) {
 				renderer.domElement.removeEventListener(

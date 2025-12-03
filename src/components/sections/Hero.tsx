@@ -13,8 +13,8 @@ export default function Hero() {
 			aria-label="Hero section"
 		>
 			{/* Background animation */}
-			<div className="absolute inset-0 z-0 pointer-events-auto">
-				<div className="w-full h-full relative">
+			<div className="absolute inset-0 z-0 w-full h-full pointer-events-auto">
+				<div className="absolute inset-0 w-full h-full">
 					<FloatingLines
 						enabledWaves={['top', 'middle', 'bottom']}
 						lineCount={[10, 15, 20]}
@@ -56,7 +56,9 @@ export default function Hero() {
 						textAlign="left"
 					/>
 
-					<button className="hero-button pointer-events-auto">Get a Free Consultation</button>
+					<button className="hero-button pointer-events-auto">
+						Get a Free Consultation
+					</button>
 				</div>
 			</main>
 		</section>
