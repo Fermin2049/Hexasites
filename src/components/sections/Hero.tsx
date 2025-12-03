@@ -13,7 +13,7 @@ export default function Hero() {
 			aria-label="Hero section"
 		>
 			{/* Background animation */}
-			<div className="absolute inset-0 -z-10">
+			<div className="absolute inset-0 z-0 pointer-events-auto">
 				<div className="w-full h-full relative">
 					<FloatingLines
 						enabledWaves={['top', 'middle', 'bottom']}
@@ -28,34 +28,36 @@ export default function Hero() {
 			</div>
 
 			{/* Content */}
-			<main className="hero-content relative max-w-4xl mx-auto z-20 px-6">
-				<SplitText
-					tag="h1"
-					text="Strategic Digital Solutions for Growing Businesses"
-					className="hero-title"
-					splitType="words, chars"
-					delay={40}
-					duration={0.5}
-					repeatDelay={3}
-					from={{ opacity: 0, y: 20 }}
-					to={{ opacity: 1, y: 0 }}
-					textAlign="right"
-				/>
+			<main className="hero-content relative max-w-4xl mx-auto z-20 px-6 pointer-events-none">
+				<div className="hero-content-inner">
+					<SplitText
+						tag="h1"
+						text="Strategic Digital Solutions for Growing Businesses"
+						className="hero-title"
+						splitType="words, chars"
+						delay={40}
+						duration={0.5}
+						repeatDelay={3}
+						from={{ opacity: 0, y: 20 }}
+						to={{ opacity: 1, y: 0 }}
+						textAlign="right"
+					/>
 
-				<SplitText
-					tag="p"
-					text="We design and build high-performance websites, mobile apps, and custom IT systems. Helping Australian companies streamline operations and expand their digital presence."
-					className="hero-description"
-					splitType="words, chars"
-					delay={30}
-					duration={0.45}
-					repeatDelay={3}
-					from={{ opacity: 0, y: 15 }}
-					to={{ opacity: 1, y: 0 }}
-					textAlign="left"
-				/>
+					<SplitText
+						tag="p"
+						text="We design and build high-performance websites, mobile apps, and custom IT systems. Helping Australian companies streamline operations and expand their digital presence."
+						className="hero-description"
+						splitType="words, chars"
+						delay={30}
+						duration={0.45}
+						repeatDelay={3}
+						from={{ opacity: 0, y: 15 }}
+						to={{ opacity: 1, y: 0 }}
+						textAlign="left"
+					/>
 
-				<button className="hero-button">Get a Free Consultation</button>
+					<button className="hero-button pointer-events-auto">Get a Free Consultation</button>
+				</div>
 			</main>
 		</section>
 	);

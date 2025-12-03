@@ -7,12 +7,27 @@
 /* TODO: define global theming (fonts, colors, grid helpers, prose). */
 
 @layer base {
-	body {
-		margin: 0;
-		min-height: 100vh;
-		background: #000;
-		color: #fff;
-	}
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+  }
+}
+
+.floating-lines-container canvas {
+  pointer-events: auto !important;
+}
+
+.hero-content * {
+  pointer-events: none;
+}
+
+.hero-content button,
+.hero-content a,
+header,
+nav {
+  pointer-events: auto;
 }
 :root {
 	--font-sofia: 'Sofia Pro', sans-serif;
