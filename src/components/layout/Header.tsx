@@ -18,7 +18,7 @@ export default function Header() {
 						as="a"
 						href="#services"
 						color="cyan"
-						speed="5s"
+						speed="3s"
 						className="text-white"
 					>
 						Services
@@ -27,7 +27,7 @@ export default function Header() {
 						as="a"
 						href="#technologies"
 						color="cyan"
-						speed="5s"
+						speed="3s"
 						className="text-white"
 					>
 						Technologies
@@ -36,7 +36,7 @@ export default function Header() {
 						as="a"
 						href="#portfolio"
 						color="cyan"
-						speed="5s"
+						speed="3s"
 						className="text-white"
 					>
 						Portfolio
@@ -45,7 +45,7 @@ export default function Header() {
 						as="a"
 						href="#about"
 						color="cyan"
-						speed="5s"
+						speed="3s"
 						className="text-white"
 					>
 						About Us
@@ -54,7 +54,7 @@ export default function Header() {
 						as="a"
 						href="#contact"
 						color="cyan"
-						speed="5s"
+						speed="3s"
 						className="text-white"
 					>
 						Contact
