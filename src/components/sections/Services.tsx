@@ -1,9 +1,9 @@
-'use client'; 
+'use client';
 
 import React, { useState } from 'react';
 import { Briefcase, ChevronDown, Cloud, Code, Server, Smartphone, TrendingUp } from 'lucide-react';
+import './services.css';
 
-// Service definitions with detailed descriptions and associated images
 const servicesData = [
   {
     title: 'Full-Stack Web Development (React / Next.js)',
@@ -60,7 +60,6 @@ const servicesData = [
 ];
 
 export default function Services() {
-  // State to control which service is expanded. Stores the title of the service.
   const [expandedService, setExpandedService] = useState<string | null>(null);
 
   const handleToggle = (title: string) => {
@@ -68,67 +67,58 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="section-default max-w-4xl mx-auto" aria-labelledby="services-title">
-      <h2 id="services-title" className="text-3xl md:text-4xl font-bold text-white text-center">
+    <section id="services" className="services-section" aria-labelledby="services-title">
+      <h2 id="services-title" className="services-heading">
         Our Premium Development Services ⚙️
       </h2>
 
-      <p className="text-gray-400 text-center mt-4 mb-12">
+      <p className="services-subtitle">
         Click on a service below to see key technological solutions and detailed focus areas.
       </p>
 
-      {/* Accordion Container */}
-      <div className="space-y-4">
+      <div className="services-list">
         {servicesData.map((service) => {
           const Icon = service.icon;
           const isExpanded = service.title === expandedService;
           const contentId = `content-${service.title.replace(/\s/g, '-')}`;
 
           return (
-            <div key={service.title} className="rounded-xl border border-white/10 transition-all duration-300">
-              {/* Clickable Service Header */}
+            <div key={service.title} className="service-item">
               <button
-                className={`w-full text-left p-6 flex justify-between items-center transition-all duration-300 rounded-xl
-                            ${
-                              isExpanded
-                                ? 'bg-cyan-900/40 shadow-[0_0_20px_rgba(6,182,212,0.3)]' // Neon glow active
-                                : 'bg-white/5 hover:bg-white/10'
-                            }`}
+                className={`service-header ${isExpanded ? 'active' : ''}`}
                 onClick={() => handleToggle(service.title)}
                 aria-expanded={isExpanded}
                 aria-controls={contentId}
               >
-                <div className="flex items-center gap-4">
-                  <Icon className={`w-6 h-6 transition-colors ${isExpanded ? 'text-cyan-400' : 'text-gray-500'}`} />
-                  <h3 className={`text-xl font-semibold transition-colors ${isExpanded ? 'text-cyan-200' : 'text-white'}`}>
-                    {service.title}
-                  </h3>
+                <div className="service-header-left">
+                  <Icon className="service-icon" />
+                  <h3 className="service-title">{service.title}</h3>
                 </div>
-
-                {/* Chevron Icon to indicate expansion state */}
-                <ChevronDown className={`w-6 h-6 transition-transform ${isExpanded ? 'rotate-180 text-cyan-400' : 'text-gray-500'}`} />
+                <ChevronDown className={`chevron ${isExpanded ? 'rotated' : ''}`} />
               </button>
 
-              {/* Expandable Content (Accordion Body) */}
               <div
                 id={contentId}
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  isExpanded ? 'max-h-[1200px] opacity-100 p-6' : 'max-h-0 opacity-0 p-0'
-                }`}
+                className={`accordion-body ${isExpanded ? 'expanded' : ''}`}
               >
                 {isExpanded && (
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
-                    {/* Detailed Description */}
-                    <div className="lg:col-span-2 space-y-3">
-                      <p className="text-gray-200 text-lg font-medium" dangerouslySetInnerHTML={{ __html: service.description }} />
-                      <p className="text-gray-400 text-sm italic border-l-2 border-cyan-500 pl-3 pt-2">
-                        **Key Details:** {service.details}
+                  <div className="accordion-content">
+                    <div className="service-text">
+                      <p
+                        className="service-description"
+                        dangerouslySetInnerHTML={{ __html: service.description }}
+                      />
+                      <p className="service-details">
+                        <strong>Key Details:</strong> {service.details}
                       </p>
                     </div>
 
-                    {/* Service Image */}
-                    <div className="lg:col-span-1 rounded-lg overflow-hidden border border-white/10 bg-black/50">
-                      <img src={service.image} alt={`Visual for ${service.title}`} className="w-full h-48 lg:h-auto object-cover" />
+                    <div className="service-image">
+                      <img
+                        src={service.image}
+                        alt={`Visual for ${service.title}`}
+                        className="service-image-img"
+                      />
                     </div>
                   </div>
                 )}
