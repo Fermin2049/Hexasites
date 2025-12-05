@@ -1,34 +1,34 @@
 export default function Services() {
   const services = [
     {
-      title: "Web Development",
+      title: "Backend & API Development (.NET Core / Node.js)",
       description:
-        "Fast, secure and SEO-optimised websites built with modern technologies.",
+        "We design and build secure, scalable, high-performance APIs using .NET Core and Node.js. This includes JWT authentication, role-based access control, SQL optimisation, domain-driven structure and Swagger documentation.",
     },
     {
-      title: "Mobile App Development",
+      title: "Business Systems & Workflow Automation",
       description:
-        "Cross-platform mobile apps for iOS and Android, designed for performance.",
+        "We create complete business platforms such as booking systems, payment modules, clinical/laboratory systems and workflow automation that reduces manual work and improves efficiency.",
     },
     {
-      title: "IT Consulting",
+      title: "Full-Stack Web Development (React / Next.js)",
       description:
-        "Technical strategy, infrastructure, cloud and digital transformation guidance.",
+        "Modern, fast and responsive web applications using React, Next.js and Tailwind CSS, including dashboards, business portals and high-performance websites.",
     },
     {
-      title: "Business Automation",
+      title: "Mobile App Development (Android – Kotlin/Java, MVVM & React Native)",
       description:
-        "Systems that automate workflows, reduce manual work and increase efficiency.",
+        "Native Android apps built with Kotlin/Java and MVVM, including secure authentication, payments and offline support. We also build cross-platform apps using React Native.",
     },
     {
-      title: "Custom Software",
+      title: "Cloud, DevOps & Technical Architecture",
       description:
-        "Tailored software solutions built to meet unique business needs.",
+        "Implementation of secure deployments, AWS integration, Docker environments and CI/CD pipelines to support scalable and reliable systems.",
     },
     {
-      title: "Technical Support",
+      title: "Technical Consulting & Software Advisory",
       description:
-        "Ongoing maintenance, updates and professional technical assistance.",
+        "We help companies choose the right technologies, improve system performance and plan long-term digital strategies.",
     },
   ];
 
