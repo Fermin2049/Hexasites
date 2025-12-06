@@ -12,6 +12,11 @@
     min-height: 100vh;
     background: #000;
     color: #fff;
+    background-image: url('/images/backgraundsetcion.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
   }
 }
 

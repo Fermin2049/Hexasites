@@ -67,7 +67,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="services-section" aria-labelledby="services-title">
+    <section id="services" className="services-section section-bg" aria-labelledby="services-title">
       <h2 id="services-title" className="services-heading">
         Our Premium Development Services ⚙️
       </h2>

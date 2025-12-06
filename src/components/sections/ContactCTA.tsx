@@ -1,7 +1,8 @@
 export default function ContactCTA() {
   return (
     <section
-      className="section-default max-w-4xl mx-auto text-center"
+      id="contact"
+      className="section-default max-w-4xl mx-auto text-center section-bg"
       aria-labelledby="contact-cta-title"
     >
       <h2

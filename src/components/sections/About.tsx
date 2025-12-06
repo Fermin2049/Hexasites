@@ -1,7 +1,8 @@
 export default function About() {
 	return (
 		<section
-			className="section-default max-w-6xl mx-auto"
+			id="about"
+			className="section-default max-w-6xl mx-auto section-bg"
 			aria-labelledby="about-title"
 		>
 			<h2

@@ -10,7 +10,8 @@ const technologies = [
 export default function Technologies() {
   return (
     <section
-      className="section-default max-w-6xl mx-auto"
+      id="technologies"
+      className="section-default max-w-6xl mx-auto section-bg"
       aria-labelledby="technologies-title"
     >
       <h2
